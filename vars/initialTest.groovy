@@ -1,6 +1,6 @@
 def call(){
   def paramString = ""
-  paramString += System.getenv("app.name")
+  paramString += (env.app_name) ? "-Dapp.name=${env.app_name} " : ''
   
   paramString
 }
