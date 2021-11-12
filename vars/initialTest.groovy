@@ -1,6 +1,6 @@
 def call(){
   def paramString = ""
-  paramString += (env.project.name) ? "-Dproject.name=${env.project.name} " : ''
+  paramString += (env.app_name) ? "-Dapp_name=${env.app_name} " : ''
   
   paramString
 }
