@@ -10,12 +10,12 @@ properties([
 
 node {
     stage('Show Params Values'){
-        sh '''
+        sh """
         ${params.PERSON}
         ${params.BIO}
         ${params.GREET}
         ${params.OPTIONS}
         ${params.PASSWORD}
-        '''
+        """
     }
 }
