@@ -10,7 +10,7 @@ properties([
 
 node {
     stage('Show Params Values'){
-        sh """
+        echo """
         ${params.PERSON}
         ${params.BIO}
         ${params.GREET}
