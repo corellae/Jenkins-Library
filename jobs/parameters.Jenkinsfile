@@ -11,7 +11,7 @@ properties([
 node {
     stage('Show Params Values'){
         wrap([$class: "MaskPasswordsBuildWrapper", varPasswordPairs: [[password: params.PASSWORD]]]){
-            sh "echo ${params.PERSON}"
+            sh """echo ${params.PERSON}"""
             //echo "\${params.PERSON}";
             //echo "\${params.BIO}";
             //echo "\${params.GREET}";
