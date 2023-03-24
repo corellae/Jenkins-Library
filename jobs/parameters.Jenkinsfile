@@ -10,7 +10,7 @@ properties([
 
 node {
     stage('Show Params Values'){
-        withCredentials([string(credentialsId: 'mySecret', variable: 'MY_SECRET', passwordVariable: 'PASSWORD')]){
+        withCredentials([string(credentialsId: 'mySecret', variable: 'MY_SECRET', password: "${params.PASSWORD}")]){
             echo '''
             "${params.PERSON}"
             "${params.BIO}"
