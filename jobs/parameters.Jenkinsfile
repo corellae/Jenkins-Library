@@ -10,13 +10,13 @@ properties([
 
 node {
     stage('Show Params Values'){
-        withCredentials([string(credentialsId: 'mySecret', variable: 'MY_SECRET', password: "${params.PASSWORD}")]){
+        wrap([$class: "MaskPasswordsBuildWrapper", varPasswordPairs: [[password: ${params.PASSWORD}]]]){
             echo '''
             "${params.PERSON}"
             "${params.BIO}"
             "${params.GREET}"
             "${params.OPTIONS}"
-            "${MASKED_MY_SECRET}"
+            "${params.PASSWORD}"
             '''
         }
     }
