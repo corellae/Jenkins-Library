@@ -10,12 +10,14 @@ properties([
 
 node {
     stage('Show Params Values'){
-        echo """
-        ${params.PERSON}
-        ${params.BIO}
-        ${params.GREET}
-        ${params.OPTIONS}
-        ${params.PASSWORD}
-        """
+        withCredentials([string(credentialsId: 'mySecret', variable: 'MY_SECRET', passwordVariable: 'PASSWORD')]){
+            echo """
+            ${params.PERSON}
+            ${params.BIO}
+            ${params.GREET}
+            ${params.OPTIONS}
+            ${params.PASSWORD}
+            """
+        }
     }
 }
