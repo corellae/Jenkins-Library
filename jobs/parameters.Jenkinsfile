@@ -10,7 +10,7 @@ properties([
 
 node {
     stage('Show Params Values'){
-        wrap([$class: "MaskPasswordsBuildWrapper", varPasswordPairs: [[password: ${params.PASSWORD}]]]){
+        wrap([$class: "MaskPasswordsBuildWrapper", varPasswordPairs: [[password: params.PASSWORD]]]){
             echo '''
             "${params.PERSON}"
             "${params.BIO}"
