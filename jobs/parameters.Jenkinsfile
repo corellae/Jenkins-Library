@@ -14,10 +14,10 @@ node {
             sh '''
                 #!/bin/bash
 
-                echo ${params.PERSON}
-                echo ${params.BIO}
-                echo ${params.GREET}
-                echo ${params.OPTIONS}
+                echo $params.PERSON
+                echo $params.BIO
+                echo $params.GREET
+                echo $params.OPTIONS
                 echo $params.PASSWORD
             
             '''
